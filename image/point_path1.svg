@@ -1,0 +1,26 @@
+<svg width="1753" height="1427" viewBox="0 0 1753 1427" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title>Path 2</title>
+<desc>Created using Figma</desc>
+<g id="Canvas" transform="translate(536 -471)">
+<g id="Path 2" filter="url(#filter0_d)">
+<use xlink:href="#path0_stroke" transform="translate(-497 512)" fill="url(#paint0_linear)"/>
+</g>
+</g>
+<defs>
+<filter id="filter0_d" filterUnits="userSpaceOnUse" x="-536" y="471" width="1754" height="1427" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 255 0"/>
+<feOffset dx="4" dy="5"/>
+<feGaussianBlur stdDeviation="9"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.37 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
+</filter>
+<linearGradient id="paint0_linear" x1="0" y1="0" x2="1" y2="0" gradientUnits="userSpaceOnUse" gradientTransform="matrix(1111.52 -859.984 1079.45 885.535 508.984 859.984)">
+<stop offset="0" stop-color="#FFCC40"/>
+<stop offset="0.599305" stop-color="#4284F3"/>
+<stop offset="1" stop-color="#DA4437"/>
+</linearGradient>
+<path id="path0_stroke" d="M 793.961 0L 793.961 -28C 784.045 -28 774.868 -22.7547 769.835 -14.2101L 793.961 0ZM 24.1262 1362.21L 818.088 14.2101L 769.835 -14.2101L -24.1262 1333.79L 24.1262 1362.21ZM 793.961 28L 1692 28L 1692 -28L 793.961 -28L 793.961 28Z"/>
+</defs>
+</svg>

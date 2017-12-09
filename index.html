@@ -1,41 +1,208 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ko">
   <head>
-    <title>with GCP 2017</title>
+    <title>with GCP</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="initial-scale=1.0">
-    <meta name="description" content="<with GCP 2017> GCP Users' United Conference | 2017-12-22 금요일 10시 ~ 19시 | 마루180 이벤트홀" />
-    <meta name="keywords" content="with GCP, GCP, Google Cloud Platform" />
+    <meta name="description" content="<with GCP> We are united in our differences. | GCP Users' United Conference | 2017-12-22 금요일 10시 ~ 19시 | 마루180" />
+    <meta name="keywords" content="GUUC, GCP, Google Cloud Platform" />
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+    <script src="https://use.fontawesome.com/4f9abf16e2.js"></script>
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-75413934-2"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase.js"></script>
+    <script src="./script/vue.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="./script/countdown.min.js"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', 'UA-75413934-2');
-    </script>
+      </script>
+    <script src="./script/index.js"></script>
+    
+    <link rel="stylesheet" href="./style/reset.css" type="text/css">
+    <link rel="stylesheet" href="./style/index.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
   </head>
+
   <body>
-    <h1 align="center">with GCP 2017</h1>
-    <hr />
-    <p>
-      <b>GCP Users' United Conference</b><br />
-      Register =&gt; <a href="https://goo.gl/forms/OUmFhkBeA1F5bjO13">https://goo.gl/forms/OUmFhkBeA1F5bjO13</a>
-    </p>
-    <p align="center">
-      <img src="withgcp2017sessions.png" width="640" />
-    <h3>hosted by</h3>
-    <ul>
-      <li><a href="https://www.facebook.com/groups/googlecloudkorea/">Google Cloud Platform Korea User Group</a></li>
-      <li><a href="https://www.facebook.com/groups/bigquery/">Google BigQuery Users</a></li>
-      <li><a href="https://www.meetup.com/GDG-Cloud-Korea/">GDG Cloud Korea</a></li>
-    </ul>
-    <h3>sponsored by</h3>
-    <ul>
-      <li><a href="https://www.google.co.kr/">Google Korea</a></li>
-      <li><a href="https://ko.atlassian.com/">Atlassian Korea</a></li>
-    </ul>
-    <hr />
-    <p align="center">We are united in our differences.</p>
+
+    <div id="fragments" class="floating-fragments">
+      <div class="part1" v-bind:style="{ transform: transform1 }"></div>
+      <div class="part2" v-bind:style="{ transform: transform2 }"></div>
+      <div class="part3" v-bind:style="{ transform: transform3 }"></div>
+    </div>
+
+    <div class="body-wrapper">
+      <div class="view-port">
+
+        <header>
+          <div class="container">
+            <div class="logo">
+              <img src="./image/logo.png" alt="logo">
+            </div>
+            <ul class="links">
+              <li class="page-link">
+                <a href="#hero-section-link">HOME</a>
+              </li>
+              <li class="page-link">
+                <a href="#session-section-link">SCHEDULE</a>
+              </li>
+              <li class="page-link">
+                <a href="#speaker-section-link">SPEAKER</a>
+              </li>
+              <li class="registration-link">
+                <a class="button" href="https://goo.gl/forms/0hEmSq9lBDIcsXWU2">참가 신청하기</a>
+              </li>
+            </ul>
+          </div>
+        </header>
+
+        <section class="hero" id="hero-section-link">
+          <div class="container">
+            <div class="conf-title">with GCP</div>
+            <div class="sub-title">GCP Users' <span>Unitited Conference 2017</span></div>
+            
+            <div id="timer" class="timer">
+              <ul>
+                <li>hour</li>
+                <li>minute</li>
+                <li>second</li>
+              </ul>
+              <hero-timer time="time"></hero-timer>
+            </div>
+
+            <div class="info-location">
+              <div class="date">2017.12.22 / 10:00 - 18:00</div>
+              <div class="place">MARU 180</div>
+            </div>
+
+            <div class="gcp-logo">
+              <img src="./image/gcp-logo.png" alt="gcp-logo">
+            </div>
+          </div>
+        </section>
+
+        <section class="session" id="session-section-link">
+          <div class="container">
+            <div class="description">
+              <div>with GCP는 구글 클라우드 플랫폼 코리아 사용자 그룹, 구글 빅쿼리 사용자 그룹, GDG 클라우드 코리아 스터디 커뮤니티가 모인 커뮤니티 연합 컨퍼런스입니다. 지난 1년간의 실무 경험과 학습 내용을 공유하고 얘기할 이 자리에서 구글 클라우드 플랫폼 도입과 사용을 위한 멋진 인사이트를 얻을 수 있을 것입니다. </div>
+            </div>
+            <h2>SCHEDULE</h2>
+            <table id="session-section" class="section-contents">
+              <tr v-for="session in sessions">
+                <td class="time">{{session.time}}</td>
+                <td class="contents">
+                  <div>
+                    <span>{{session.step}}</span>
+                    <strong>{{session.title}}</strong>
+                  </div>
+                  <div>
+                    {{session.description}}
+                  </div>
+                  <div><strong>{{session.speaker}}</strong> <span v-if="session.speaker">@</span> {{session.work_at}}</div>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </section>
+  
+
+        <section class="speaker" id="speaker-section-link" id="speaker-section-link">
+          <div class="container">
+              <h2>SPEAKER</h2>
+              <div id="speaker-section" class="section-contents">
+                <div class="shape"></div>
+                <ul class="speaker-list">
+                  <li v-for="speaker in speakers">
+                    <div class="photo-wrapper">
+                      <img v-bind:src="getImgUrl(speaker.photo)">
+                    </div>
+                    <div class="name">{{speaker.name}} <span>@ {{speaker.works_at}}<span></span></div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+        </section>
+
+        <section class="map" id="map-section-link">
+          <div class="container">
+    
+          </div>
+          <div id="map" class="g-map"></div>
+        </section>
+
+        <section class="names" id="names-section-link">
+          <div class="container">
+
+            <div class="sponsors row">
+              <div class="category">후원 /</div>
+              <div class="contents">
+                <div class="sponsor">
+                  <div class="img-wrapper">
+                    <img src="./image/google.png" alt="google logo">
+                    <div class="sponsor-name">Google Korea</div>
+                  </div>
+                </div>
+                <div class="sponsor">
+                  <div class="img-wrapper">
+                    <img src="./image/atlassian.png" alt="atlassian logo">
+                    <div class="sponsor-name">Atlassian Korea</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="hosts row">
+              <div class="category">행사 주최 /</div>
+              <div class="contents">
+                <div class="host">Google Cloud Platform Korea User Group</div>
+                <div class="host">Google BigQuery Users</div>
+                <div class="host">GDG Cloud Korea</div>
+              </div>
+            </div>
+
+            <div class="supporters row">
+              <div class="category">준비한 사람들 /</div>
+              <div class="contents">
+                <ul>
+                  <li class="supporter">고지훈</li>
+                  <li class="supporter">김나영</li>
+                  <li class="supporter">김재희</li>
+                  <li class="supporter">민영란</li>
+                  <li class="supporter">박정운</li>
+                  <li class="supporter">백재연</li>
+                  <li class="supporter">변성윤</li>
+                  <li class="supporter">이민우</li>
+                  <li class="supporter">이용운</li>
+                  <li class="supporter">이재광</li>
+                  <li class="supporter">정명훈</li>
+                  <li class="supporter">정민석</li>
+                  <li class="supporter">황장군</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <footer>
+          <div class="container">
+            <div class="footer-title">2017 with GCP</div>
+          </div>
+        </footer>
+
+      </div>
+    </div>
+
+    <div class="deco-border top"></div>
+    <div class="deco-border bottom"></div>
+    <div class="deco-border left"></div>
+    <div class="deco-border right"></div>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCYSJ9i8G6Ak1A_X_Lx194OtoH1kSfgnaU&callback=initMap"
+    async defer></script>
+
+
   </body>
 </html>
