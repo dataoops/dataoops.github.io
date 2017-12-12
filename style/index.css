@@ -84,7 +84,7 @@ section h2 {
     position: relative;
 }
 .view-port {
-    position: absolute;
+    position: relative;
     top: 8px;
     left: 8px;
     width: calc(100% - 16px);
@@ -142,11 +142,11 @@ header .links li .button {
     top: 94px;
     right: 80px;
 }
+
 .timer ul li {
     display: inline-block;
     font-weight: 300;
-    margin-left: 10px;
-    margin-right: 40px;
+    margin-left: 40px;
 }
 .timer .numbers {
     font-size: 50px;
@@ -246,9 +246,11 @@ ul.speaker-list {
     height: 445px;
 }
 
-
-
-/* names */
+/* map + names */
+.map .contents {
+    font-size: 1.2em;
+    font-weight: bold;
+}
 .names {
     display: flex;
     justify-content: space-between;
@@ -258,16 +260,18 @@ ul.speaker-list {
     align-content: flex-start;
     flex-wrap: wrap;
 }
-.names .row {
+.row {
     display: flex;
-    margin-bottom: 10em;
-}
-
-.names .sponsors.row {
-    width: 100%;
+    margin-bottom: 3em;
     flex-wrap: wrap;
 }
-.names .category {
+.names .row {
+    margin-bottom: 10em;
+}
+.names .sponsors.row {
+    width: 100%;
+}
+.category {
     font-size: 21px;
     letter-spacing: -0.8px;
     width: 160px;
@@ -280,11 +284,19 @@ ul.speaker-list {
     display: flex;
     width: calc(100% - 160px);
     min-width: 300px;
+    flex-wrap: wrap;
 }
 .names .sponsors.row .contents .sponsor {
     height: 8em;
     width: calc(50% - 86px);
     position: relative;
+}
+.names .sponsors.row .contents .sponsor.gold {
+    width: 50%;
+    margin-bottom: 5em;
+}
+.names .sponsors.row .contents .sponsor.silver {
+    width: 30%;
 }
 .names .sponsors.row .contents .img-wrapper {
     position: relative;
@@ -314,40 +326,38 @@ ul.speaker-list {
 .floating-fragments {
     position: absolute;
     z-index: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
 }
 .floating-fragments .part1, .floating-fragments .part2, .floating-fragments .part3 {
     -webkit-transition: all 2s;
     transition: all 2s;
 }
-.floating-fragments .part1 {
+.floating-fragments div {
     position: absolute;
-    top: 1100px;
-    left: 12%;
+    background-repeat: no-repeat;
+}
+.floating-fragments .part1 {
+    top: 1050px;
+    left: 440px;
     width: 403px;
     height: 240px;
     background: url(../image/part1.svg) no-repeat center bottom ;
-    background-repeat: no-repeat;
+    background-size: cover;
 }
 .floating-fragments .part2 {
-    position: absolute;
     top: 1800px;
-    left: 8%;
     width: 413px;
+    left: 300px;
     height: 400px;
     background: url(../image/part2.svg) no-repeat center bottom ;
-    background-repeat: no-repeat;
+    background-size: cover;
 }
 .floating-fragments .part3 {
-    position: absolute;
     top: 2500px;
-    left: 4%;
-    width: 342px;
+    left: 300px;
+    width: 345px;
     height: 547px;
     background: url(../image/part3.svg) no-repeat center bottom ;
-    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 
@@ -363,7 +373,7 @@ footer {
         font-size: 11px;
     }
     .container {
-        width: calc(100% - 32px);
+        width: calc(100% - 48px);
     }
     section h2 {
         font-size: 3em;
@@ -426,7 +436,9 @@ footer {
     .speaker-list li .name span {
         display: block;
     }
-
+    .names .sponsors.row .contents .sponsor.gold {
+        margin-bottom: 0;
+    }
     .names {
         display: flex;
         justify-content: space-between;
@@ -446,7 +458,7 @@ footer {
         flex-wrap: wrap;
         margin-bottom: 2em;
     }
-    .names .category {
+    .category {
         font-size: 16px;
         letter-spacing: -0.8px;
         width: 120px;
@@ -488,6 +500,27 @@ footer {
         display: inline-block;
         margin: 2px;
     }
+    .floating-fragments .part1 {
+        top: 880px;
+        left: 20px;
+        width: 240px;
+        height: 140px;
+        background-size: cover;
+    }
+    .floating-fragments .part2 {
+        top: 1500px;
+        left: 10px;
+        width: 240px;
+        height: 230px;
+        background-size: cover;
+    }
+    .floating-fragments .part3 {
+        top: 2000px;
+        left: 40px;
+        width: 186px;
+        height: 300px;
+        background-size: cover;
+    }
 }
 
 @media only screen and (min-width:640px) and (max-width:1080px) {
@@ -516,8 +549,9 @@ footer {
     .timer ul li {
         display: inline-block;
         font-weight: 300;
-        margin-left: 6px;
-        margin-right: 12px;
+        font-size: .8em;
+        margin-left: 16px;
+        margin-right: 0px;
     }
     .timer .numbers {
         font-size: 30px;
@@ -567,7 +601,9 @@ footer {
     .speaker-list li .name span {
         display: block;
     }
-
+    .names .sponsors.row .contents .sponsor.gold {
+        margin-bottom: 2em;
+    }
     .names {
         display: flex;
         justify-content: space-between;
@@ -628,5 +664,26 @@ footer {
     .names ul li {
         display: inline-block;
         margin: 2px;
+    }
+    .floating-fragments .part1 {
+        top: 1140px;
+        left: 170px;
+        width: 304px;
+        height: 180px;
+        background-size: cover;
+    }
+    .floating-fragments .part2 {
+        top: 1700px;
+        left: 100px;
+        width: 300px;
+        height: 285px;
+        background-size: cover;
+    }
+    .floating-fragments .part3 {
+        top: 2500px;
+        left: 80px;
+        width: 252px;
+        height: 400px;
+        background-size: cover;
     }
 }

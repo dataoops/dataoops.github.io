@@ -30,9 +30,9 @@
   <body>
 
     <div id="fragments" class="floating-fragments">
-      <div class="part1" v-bind:style="{ transform: transform1 }"></div>
-      <div class="part2" v-bind:style="{ transform: transform2 }"></div>
-      <div class="part3" v-bind:style="{ transform: transform3 }"></div>
+      <div class="part1"></div>
+      <div class="part2"></div>
+      <div class="part3"></div>
     </div>
 
     <div class="body-wrapper">
@@ -130,7 +130,13 @@
 
         <section class="map" id="map-section-link">
           <div class="container">
-    
+            <div class="row">
+              <div class="category">장소 /</div>
+              <div class="contents">
+                <div class="name">마루180</div>
+                <a href="http://maru180.com">서울시 강남구 역삼동 790-6</a>
+              </div>
+            </div>
           </div>
           <div id="map" class="g-map"></div>
         </section>
@@ -141,18 +147,33 @@
             <div class="sponsors row">
               <div class="category">후원 /</div>
               <div class="contents">
-                <div class="sponsor">
+                <div class="sponsor gold">
                   <div class="img-wrapper">
                     <img src="./image/google.png" alt="google logo">
                     <div class="sponsor-name">Google Korea</div>
                   </div>
                 </div>
-                <div class="sponsor">
+                <div class="sponsor gold">
                   <div class="img-wrapper">
                     <img src="./image/atlassian.png" alt="atlassian logo">
                     <div class="sponsor-name">Atlassian Korea</div>
                   </div>
                 </div>
+                <div class="sponsor silver">
+                  <div class="img-wrapper">
+                    <img src="./image/dreamyoungs.png" alt="dreamyoungs logo">
+                  </div>
+                </div>
+                <div class="sponsor silver">
+                  <div class="img-wrapper">
+                    <img src="./image/tedtiebutler.png" alt="tedtiebutler logo">
+                  </div>
+                </div>
+                <div class="sponsor silver">
+                  <div class="img-wrapper">
+                    <img src="./image/exem.png" alt="exem logo">
+                  </div>
+                </div>  
               </div>
             </div>
 
