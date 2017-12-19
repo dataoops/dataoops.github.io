@@ -475,6 +475,7 @@ footer {
         font-size: 16px;
         letter-spacing: -0.8px;
         width: 120px;
+        margin-bottom: 10px;    
         display: inline-block;
     }
     .names .hosts, .names .supporters {
@@ -496,7 +497,7 @@ footer {
         width: fit-content;
     }
     .names .sponsors.row .contents .sponsor.gold img{
-        width: 180px; 
+        width: 160px; 
     }
     .names .sponsors.row .contents .sponsor.silver img {
         width: 100%;
@@ -516,7 +517,7 @@ footer {
         margin: 2px;
     }
     .silver-wrap {
-        width: 215px;
+        width: 172px;
         display: flex;
         align-items: center;
         justify-content: space-between;
